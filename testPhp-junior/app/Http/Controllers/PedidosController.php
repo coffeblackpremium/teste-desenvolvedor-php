@@ -13,4 +13,6 @@ class PedidosController extends Controller
 
         return view('pedidos', ['pedidos' => $pedidos]);
     }
+
+
 }
