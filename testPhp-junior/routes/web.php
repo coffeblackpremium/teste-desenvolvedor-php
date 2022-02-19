@@ -18,4 +18,7 @@ use App\Http\Controllers\PedidosController;
 
 
 Route::get('/', [PedidosController::class, 'index']);
-Route::get('/cliente', [ClienteController::class, 'index']);
+
+Route::get('/clientes/tabela', [ClienteController::class, 'index']);
+Route::get('/clientes/cadastro', [ClienteController::class, 'create']);
+Route::post('/clientes/cadastro', [ClienteController::class, 'store']);

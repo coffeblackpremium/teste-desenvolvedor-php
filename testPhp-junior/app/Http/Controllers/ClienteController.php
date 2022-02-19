@@ -12,4 +12,20 @@ class ClienteController extends Controller
 
         return view('clientes/cliente', ['clientes' => $clientes]);
     }
+
+    public function create(){
+        return view('clientes.cadastroCliente');
+    }
+
+    public function store(Request $request){
+        $cliente = new Cliente;
+
+        $cliente->nome = $request->nome;
+        $cliente->email = $request->email;
+        $cliente->cpf = $request->cpf;
+
+        $cliente->save();
+        return redirect('/clientes/tabela');
+    }
+
 }

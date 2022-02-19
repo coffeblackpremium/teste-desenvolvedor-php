@@ -3,3 +3,27 @@
 * {
     font-family: 'Roboto';
 }
+
+/* Titulo dos Crud*/
+.title-table {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Página: cliente/cadastro */
+
+.register-container{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.register-container input, label{
+    margin-top: 20px;
+}
