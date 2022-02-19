@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\PedidosController;
+
+
+Route::get('/', [PedidosController::class, 'index']);
+Route::get('/cliente', [ClienteController::class, 'index']);
