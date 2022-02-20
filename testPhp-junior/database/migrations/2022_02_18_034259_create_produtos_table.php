@@ -18,6 +18,12 @@ return new class extends Migration
             $table->string('tipoProduto', 255);
             
         });
+        Schema::table('produtos', function(Blueprint $table){
+            $table->string('nomeProduto', 255);
+            $table->decimal('valorProduto');
+            $table->integer('Quantidade');
+            $table->boolean('estoque');
+        });
     }
 
     /**

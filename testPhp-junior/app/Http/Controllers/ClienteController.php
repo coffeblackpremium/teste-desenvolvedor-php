@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 
@@ -9,8 +11,9 @@ class ClienteController extends Controller
 {
     public function index(){
         $clientes = Cliente::all();
+        $paginates = DB::table('clientes')->paginate(20);
 
-        return view('clientes/index', ['clientes' => $clientes]);
+        return view('clientes/index', ['clientes' => $clientes, 'paginate'=>$paginates]);
     }
 
     public function create(){

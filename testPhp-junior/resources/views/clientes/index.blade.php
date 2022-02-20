@@ -23,8 +23,11 @@
                         <td>{{$cliente->nome}}</a></td>
                         <td>{{$cliente->email}}</td>
                         <td>{{$cliente->cpf}}</td>
+                        <td><a href="/clientes/tabela/{{$cliente->id}}"><button type="button" class="btn btn-primary">Visualizar</button></a></td>
+                        <td><a href="#" ><button type="button" class="btn btn-success">Editar</button></a></td>
+                        <td><a href="#"><button type="button" class="btn btn-danger">Excluir</button></a></td>
                 @endforeach
-                        <td>
+                    {{$paginate->links()}}
                     </tr>
             </table>
     </div>

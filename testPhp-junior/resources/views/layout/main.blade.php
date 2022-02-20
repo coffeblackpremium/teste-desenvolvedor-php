@@ -23,10 +23,10 @@
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="/clientes/tabela" class="nav-link">Clientes</a>
+                                <a href="{{url ('/clientes/tabela')}}" class="nav-link">Clientes</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Produtos</a>
+                                <a href="{{url ('/produtos')}}" class="nav-link">Produtos</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/" class="nav-link">Pedidos</a>
