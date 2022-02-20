@@ -19,6 +19,7 @@ use App\Http\Controllers\ProdutosController;
 
 //************** Pedidos Routes *************************/
 Route::get('/', [PedidosController::class, 'index']);
+Route::get('/pedidos/{id}', [PedidosController::class, 'show']);
 
 
 //****************Clientes Routes ***********************/

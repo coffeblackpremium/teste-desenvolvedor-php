@@ -11,8 +11,14 @@ class PedidosController extends Controller
     public function index() {
         $pedidos = Pedido::all();
 
-        return view('pedidos', ['pedidos' => $pedidos]);
+        return view('pedidos.pedidosIndex', ['pedidos' => $pedidos]);
     }
 
 
+    public function show($id) {
+        $pedido = Pedido::findOrFail($id);
+        $pedido->load('cliente', 'produto');
+
+        return view('pedidos.pedidosShow', ['pedido'=>$pedido]);
+    }
 }

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('nomeProduto', 255);
             $table->decimal('valorProduto');
             $table->integer('Quantidade');
-            $table->boolean('estoque');
+            $table->integer('estoque');
         });
     }
 
