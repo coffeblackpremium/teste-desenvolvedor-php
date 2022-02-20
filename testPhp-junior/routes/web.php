@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\PedidosController;
 
-
+//************** Pedidos Routes *************************/
 Route::get('/', [PedidosController::class, 'index']);
 
+
+//****************Clientes Routes ***********************/
 Route::get('/clientes/tabela', [ClienteController::class, 'index']);
 Route::get('/clientes/cadastro', [ClienteController::class, 'create']);
-Route::post('/clientes/cadastro', [ClienteController::class, 'store']);
+Route::get('/clientes/tabela/{id}', [ClienteController::class, 'show']);
+Route::post('/clientes/tabela', [ClienteController::class, 'store']);

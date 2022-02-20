@@ -10,11 +10,11 @@ class ClienteController extends Controller
     public function index(){
         $clientes = Cliente::all();
 
-        return view('clientes/cliente', ['clientes' => $clientes]);
+        return view('clientes/index', ['clientes' => $clientes]);
     }
 
     public function create(){
-        return view('clientes.cadastroCliente');
+        return view('clientes.create');
     }
 
     public function store(Request $request){
@@ -25,7 +25,13 @@ class ClienteController extends Controller
         $cliente->cpf = $request->cpf;
 
         $cliente->save();
-        return redirect('/clientes/tabela');
+        return redirect('/clientes/tabela')->with('msg', 'Cliente cadastrado com Sucesso!');
     }
 
+    public function show($id) {
+
+        $cliente = Cliente::findOrFail($id);
+        
+        return view('clientes.show', ['cliente'=>$cliente]);
+    }
 }

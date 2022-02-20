@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- CSS da Aplicação !-->
-        <link rel="stylesheet" href="/css/style.css"
+        <link rel="stylesheet" href="/css/style.css" >
         <title>@yield('title')</title>
     </head>
     <body>
@@ -23,19 +23,28 @@
                     <div class="collapse navbar-collapse" id="navbar">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Clientes</a>
+                                <a href="/clientes/tabela" class="nav-link">Clientes</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Produtos</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Pedidos</a>
+                                <a href="/" class="nav-link">Pedidos</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </header>
-        @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg">{{session('msg')}}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
     </body>
 </html>
