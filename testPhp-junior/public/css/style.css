@@ -21,6 +21,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 40px;
     padding-bottom: 20px;
 }
 
@@ -47,6 +48,18 @@
 
 
 /* Página: Cliente/index */
+
+.container-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-search button {
+    width: auto;
+    height: 38px;
+    margin-right: 40px;
+}
 
 .table-container {
     width: 85%;

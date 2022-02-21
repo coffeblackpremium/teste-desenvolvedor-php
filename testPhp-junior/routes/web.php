@@ -31,4 +31,7 @@ Route::controller(ClienteController::class)->group(function() {
 
 });
 /* Produtos Routes */
-Route::get('/produtos', [ProdutosController::class, 'index']);
+Route::controller(ProdutosController::class)->group(function() {
+    Route::get('/produtos', [ProdutosController::class, 'index']);
+    route::get('produtos/cadastro', [ProdutosController::class, 'create']);
+});
