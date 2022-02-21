@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdutosController extends Controller
 {
@@ -14,9 +15,10 @@ class ProdutosController extends Controller
      */
     public function index()
     {
-        $produto = Produto::all();
+        $produtos = Produto::all();
+        $paginates = DB::table('pedidos')->paginate(20);
 
-        return view('produtos.produtosIndex', ['produto'=>$produto]);
+        return view('produtos.produtosIndex', ['produtos'=>$produtos, 'paginates'=>$paginates]);
 
     }
 
