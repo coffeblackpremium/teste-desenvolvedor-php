@@ -28,6 +28,9 @@ Route::controller(ClienteController::class)->group(function() {
     Route::get('/clientes/cadastro', [ClienteController::class, 'create']);
     Route::get('/clientes/tabela/{id}', [ClienteController::class, 'show']);
     Route::post('/clientes', [ClienteController::class, 'store']);
+    Route::delete('/clientes/{id}', [ClienteController::class, 'destroy']);
+    Route::get('clientes/edit/{id}', [ClienteController::class, 'edit']);
+    Route::put('/clientes/update/{id}', [ClienteController::class, 'update']);
 
 });
 /* Produtos Routes */

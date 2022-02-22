@@ -47,4 +47,22 @@ class ClienteController extends Controller
         
         return view('clientes.show', ['cliente'=>$cliente]);
     }
+
+    public function destroy($id) {
+        $cliente = Cliente::findOrFail($id)->delete();
+        
+        return redirect('clientes/tabela')->with('msg', 'O Cliente foi Excluido sucesso!');
+    }
+
+
+    public function edit($id) {
+        $cliente = Cliente::findOrFail($id);
+        return view('clientes.edit',['cliente'=>$cliente]);
+    }
+
+    public function update(Request $request){
+        Cliente::findOrFail($request->id)->update($request->all());
+
+        return redirect('clientes.index')->with('msg', 'Cliente editado com Sucesso!');
+    }
 }
