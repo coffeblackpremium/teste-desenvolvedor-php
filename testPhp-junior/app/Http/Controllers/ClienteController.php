@@ -10,10 +10,20 @@ use App\Models\Cliente;
 class ClienteController extends Controller
 {
     public function index(){
-        $clientes = Cliente::all();
+        $search = request('search');
+        if($search) {
+            
+            $clientes = Cliente::where([
+                ['nome', 'like', '%'.$search.'%']
+            ])->get();
+        
+        } else {
+            $clientes = Cliente::all();
+        }
+
         $paginates = DB::table('clientes')->paginate(20);
 
-        return view('clientes/index', ['clientes' => $clientes, 'paginate'=>$paginates]);
+        return view('clientes/index', ['clientes' => $clientes,'search'=>$search, 'paginate'=>$paginates]);
     }
 
     public function create(){

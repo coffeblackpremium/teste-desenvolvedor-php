@@ -4,21 +4,16 @@
 @section('content')
     <h1 class="title-table">Tabela de Clientes</h1>
     <div class="container-search">
-        <form action="/clientes/tabela" method="get">
-            <div class="row">
-                <div class="input-group">
-                    <div class="form-outline">
-                        <input type="search" id="form1" class="form-control" placeholder="Digite o Nome ou CPF.." />
-                        <label class="form-label" for="form1"></label>
-                    </div>
-                    <button type="button" class="btn btn-primary">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    </div>
-                </div>
-            </div>
+        <form action="/clientes/tabela" method="GET">
+            <input type="text" name="search" class="form-control" placeholder="Digite o nome ou CPF">
+            <button type="submit" class="btn btn-primary">Buscar</button>
         </form>
     </div>
+
+    @if($search)
+    <h2>Estou buscando por: {{$search}} </h2>
+
+    @endif
 
     <div class="table-container">
         <table class="table table-borderlss">

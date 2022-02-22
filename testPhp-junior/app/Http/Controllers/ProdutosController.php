@@ -16,7 +16,7 @@ class ProdutosController extends Controller
     public function index()
     {
         $produtos = Produto::all();
-        $paginates = DB::table('pedidos')->paginate(20);
+        $paginates = DB::table('produtos')->paginate(20);
 
         return view('produtos.produtosIndex', ['produtos'=>$produtos, 'paginates'=>$paginates]);
 

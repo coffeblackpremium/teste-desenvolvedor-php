@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-table class="table table-borderlss">
+<table class="table table-borderlss">
     <h1 class="title-table">Todos os Produtos</h1>
     <div class="table-container">
         <table class="table table-borderlss">
@@ -33,7 +33,7 @@ table class="table table-borderlss">
                         <td><a href="#" ><button type="button" class="btn btn-success">Editar</button></a></td>
                         <td><a href="#"><button type="button" class="btn btn-danger">Excluir</button></a></td>
                 @endforeach
-                {{$paginate->links()}}
+                {{$paginates->links()}}
                     </tr>
             </table>
     </div>
